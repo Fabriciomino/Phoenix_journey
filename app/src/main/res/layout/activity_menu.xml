@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pondoxx"
+    tools:context=".MenuActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.7"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondocurvo"
+        tools:layout_editor_absoluteX="-8dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/menu_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:text="Phoenix Journey"
+        android:textColor="#F5F5F5"
+        android:textSize="30sp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Imagen en el medio -->
+
+    <!-- Botón superior izquierdo -->
+
+    <ImageButton
+        android:id="@+id/center_button"
+        android:layout_width="117dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="246dp"
+        android:src="@drawable/fenix"
+        android:scaleType="centerCrop"
+    android:background="?android:attr/selectableItemBackground"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/menu_title" />
+
+
+    <!-- Botón inferior izquierdo -->
+
+    <LinearLayout
+        android:id="@+id/top_left_button"
+        android:layout_width="98dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="130dp"
+        android:background="@drawable/button_momt"
+        android:gravity="center"
+
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@id/center_button"
+        app:layout_constraintTop_toBottomOf="@id/menu_title">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/rutina"
+            android:scaleType="fitCenter"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/top_right_button"
+        android:layout_width="98dp"
+        android:layout_height="98dp"
+        android:background="@drawable/button_momt"
+        android:layout_marginTop="130dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/center_button"
+        app:layout_constraintTop_toBottomOf="@id/menu_title">
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/crono"
+            android:scaleType="fitCenter"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_left_button"
+        android:layout_width="98dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_momt"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@id/center_button"
+        app:layout_constraintTop_toBottomOf="@id/center_button">
+
+        <ImageView
+            android:layout_width="39dp"
+            android:layout_height="38dp"
+            android:src="@drawable/musculo" />
+
+    </LinearLayout>
+
+    <!-- Botón inferior derecho -->
+    <LinearLayout
+        android:id="@+id/bottom_right_button"
+        android:layout_width="98dp"
+        android:layout_height="98dp"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:background="@drawable/button_momt"
+        app:layout_constraintStart_toEndOf="@id/center_button"
+        app:layout_constraintTop_toBottomOf="@id/center_button">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/dieta2" />
+
+    </LinearLayout>
+
+    <!-- Botones de imagen adicionales -->
+
+    <ImageView
+        android:id="@+id/imageViewBottom"
+        android:layout_width="451dp"
+        android:layout_height="99dp"
+        android:contentDescription="Imagen en la parte inferior"
+        android:scaleType="fitXY"
+        android:src="@drawable/gris"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.385"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/menu_icon_button"
+        android:layout_width="42dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="802dp"
+        android:alpha="0.4"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/desc_menu"
+        android:scaleType="fitCenter"
+        android:src="@drawable/menunew"
+        app:layout_constraintEnd_toStartOf="@id/calendario_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/calendario_button"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="800dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/desc_calendario"
+        android:scaleType="fitCenter"
+        android:alpha="0.8"
+        android:src="@drawable/calendariogris"
+        app:layout_constraintEnd_toStartOf="@id/usuario_button"
+        app:layout_constraintStart_toEndOf="@id/menu_icon_button"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/usuario_button"
+        android:layout_width="33dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="802dp"
+        android:alpha="0.4"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/desc_usuario"
+        android:scaleType="fitCenter"
+        android:src="@drawable/usermenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/calendario_button"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mis Rutinas"
+
+        android:textColor="#fff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_left_button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="0dp"
+        android:text="Progreso"
+        android:textColor="#fff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bottom_left_button"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="275dp"
+        android:layout_marginTop="0dp"
+        android:text="Nutrición"
+        android:textColor="#fff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bottom_right_button"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="285dp"
+        android:layout_marginTop="0dp"
+        android:text="Sesión"
+        android:textColor="#fff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_right_button" />
+</androidx.constraintlayout.widget.ConstraintLayout>

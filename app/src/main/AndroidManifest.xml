@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.myapplication_phoenix_journey">
+
+    <!-- Configuración general del manifiesto -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PhoenixJourney"
+        tools:targetApi="31">
+
+        <!-- Actividad principal (Pantalla de inicio) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Actividad del menú -->
+        <activity
+            android:name=".MenuActivity"
+            android:exported="true" />
+
+        <!-- Actividad de registro -->
+        <activity android:name=".RegisterActivity"
+            android:exported="true" />
+
+        <!-- Actividad de objetivo principal -->
+        <activity
+            android:name=".ObjetivoPrincipalActivity"
+            android:exported="true" />
+
+        <!-- Actividad para agregar datos -->
+        <activity
+            android:name=".AgregarDatosActivity"
+        android:exported="true" />
+
+        <!-- Actividad para seleccionar nivel -->
+        <activity android:name=".SeleccionNivelActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+
+        <activity android:name=".CrearRutinaActivity"
+            />
+
+        <activity android:name=".ProgresoCorporalActivity"
+            />
+        <activity android:name=".DietaActivity"
+            />
+        <activity android:name=".CalendarioActivity"
+            />
+        <activity android:name=".IniciarEntrenamientoActivity" />
+
+        <activity android:name=".PhoenixJourneyActivity" />
+        <activity android:name=".NutrientesActivityMantenimiento" />
+
+        <!-- NutrientesActivityVolumen -->
+        <activity android:name=".NutrientesActivityVolumen" />
+
+        <!-- NutrientesActivityDeficit -->
+        <activity android:name=".NutrientesActivity" />
+        <activity android:name=".EditarRutinaActivity"/>
+        <activity android:name=".AñadirEjercicioActivity"/>
+        <activity android:name=".MiUsuarioActivity" />
+        <activity android:name=".AmigosActivity"/>
+
+
+
+    </application>
+
+</manifest>

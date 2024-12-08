@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pondoxx"
+    tools:context=".CrearRutinaActivity">
+
+
+
+    <!-- Tu fondo actual -->
+
+    <TextView
+        android:id="@+id/create_routine_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RUTINA"
+        android:textColor="#F5F5F5"
+        android:textSize="30sp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="25dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="68dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Botón de Atrás"
+        android:scaleType="fitCenter"
+        android:src="@drawable/atras"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- Botones para los días de la semana -->
+    <Button
+        android:id="@+id/boton_lunes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="#DC143C"
+        android:text="Lunes"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/create_routine_title" />
+    <View
+        android:id="@+id/lunes"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#D3D3D3"
+        app:layout_constraintEnd_toEndOf="@id/boton_lunes"
+        app:layout_constraintStart_toStartOf="@id/boton_lunes"
+        app:layout_constraintTop_toBottomOf="@id/boton_lunes" />
+
+
+    <Button
+        android:id="@+id/boton_martes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#50C878"
+        android:text="Martes"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/boton_lunes" />
+    <View
+        android:id="@+id/martes"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#D3D3D3"
+        app:layout_constraintEnd_toEndOf="@id/boton_martes"
+        app:layout_constraintStart_toStartOf="@id/boton_martes"
+        app:layout_constraintTop_toBottomOf="@id/boton_martes" />
+
+    <Button
+        android:id="@+id/boton_miercoles"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#4169E1"
+        android:text="Miércoles"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/boton_martes" />
+    <View
+        android:id="@+id/miercoles"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#D3D3D3"
+        app:layout_constraintEnd_toEndOf="@id/boton_miercoles"
+        app:layout_constraintStart_toStartOf="@id/boton_miercoles"
+        app:layout_constraintTop_toBottomOf="@id/boton_miercoles" />
+
+    <Button
+        android:id="@+id/boton_jueves"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#FFA500"
+        android:text="Jueves"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/boton_miercoles" />
+    <View
+        android:id="@+id/jueves"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#D3D3D3"
+        app:layout_constraintEnd_toEndOf="@id/boton_jueves"
+        app:layout_constraintStart_toStartOf="@id/boton_jueves"
+        app:layout_constraintTop_toBottomOf="@id/boton_jueves" />
+
+    <Button
+        android:id="@+id/boton_viernes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#9966CC"
+        android:text="Viernes"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/boton_jueves" />
+    <View
+        android:id="@+id/viernes"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#D3D3D3"
+        app:layout_constraintEnd_toEndOf="@id/boton_viernes"
+        app:layout_constraintStart_toStartOf="@id/boton_viernes"
+        app:layout_constraintTop_toBottomOf="@id/boton_viernes" />
+
+
+    <Button
+        android:id="@+id/boton_sabado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#800000"
+        android:text="Sábado"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/boton_viernes" />
+    <View
+        android:id="@+id/sabado"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#D3D3D3"
+        app:layout_constraintEnd_toEndOf="@id/boton_sabado"
+        app:layout_constraintStart_toStartOf="@id/boton_sabado"
+        app:layout_constraintTop_toBottomOf="@id/boton_sabado" />
+
+    <Button
+        android:id="@+id/boton_domingo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#000080"
+        android:text="Domingo"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/boton_sabado" />
+    <View
+        android:id="@+id/domingo"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#D3D3D3"
+        app:layout_constraintEnd_toEndOf="@id/boton_domingo"
+        app:layout_constraintStart_toStartOf="@id/boton_domingo"
+        app:layout_constraintTop_toBottomOf="@id/boton_domingo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

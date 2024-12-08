@@ -1,0 +1,10 @@
+<!-- res/values/styles.xml -->
+<resources>
+    <!-- Definir el tema PhoenixJourney -->
+    <style name="Theme.PhoenixJourney" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Aquí puedes agregar las personalizaciones de tu tema -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+</resources>

@@ -1,0 +1,110 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pondoxx"
+    tools:context=".AñadirEjercicioActivity">
+
+    <!-- Fondo decorativo -->
+
+    <!-- Botón "Atrás" -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondocurvo"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="25dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="68dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Botón de Atrás"
+        android:scaleType="fitCenter"
+        android:src="@drawable/atras"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Título de la actividad -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="Añadir ejercicios"
+        android:textColor="#D3D3D3"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/btn_pecho"
+        android:layout_width="195dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="144dp"
+        android:background="@drawable/button_momt"
+        android:text="Pecho"
+        android:textColor="#ffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <Button
+        android:id="@+id/btn_espalda"
+        android:layout_width="195dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_momt"
+        android:text="Espalda"
+        android:textColor="#ffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_pecho" />
+
+    <Button
+        android:id="@+id/btn_hombro"
+        android:layout_width="195dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_momt"
+        android:text="Hombro"
+        android:textColor="#ffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_espalda" />
+
+    <Button
+        android:id="@+id/btn_brazo"
+        android:layout_width="195dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_momt"
+        android:text="Brazo"
+        android:textColor="#ffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_hombro" />
+
+    <Button
+        android:id="@+id/btn_pierna"
+        android:layout_width="195dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_momt"
+        android:text="Pierna"
+        android:textColor="#ffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_brazo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
