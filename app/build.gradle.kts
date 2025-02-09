@@ -3,7 +3,6 @@ plugins {
     kotlin("android") version "1.9.10" apply true // Plugin Kotlin Android
 }
 
-
 android {
     namespace = "com.example.myapplication_phoenix_journey"
     compileSdk = 34 // Versión SDK para compilar
@@ -49,9 +48,16 @@ android {
 dependencies {
     // Dependencias de la aplicación
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.10.0")
+    implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.activity:activity-ktx:1.7.2")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+
+        implementation ("androidx.room:room-runtime:2.5.0")
+    implementation(libs.room.common)
+    annotationProcessor ("androidx.room:room-compiler:2.5.0")
+
+
+
 
     // Dependencias para pruebas locales y de instrumentación
     testImplementation("junit:junit:4.13.2")
@@ -62,4 +68,8 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2") // Para LiveData y ViewModel
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.3") // Navegación
     implementation("androidx.navigation:navigation-ui-ktx:2.7.3") // Navegación UI
+
+    // Otras dependencias opcionales si las necesitas
+    // implementation("com.squareup.retrofit2:retrofit:2.9.0")  // Si usas Retrofit
+    // implementation("androidx.room:room-runtime:2.4.2")  // Si usas Room para base de datos
 }

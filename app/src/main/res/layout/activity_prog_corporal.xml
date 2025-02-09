@@ -3,66 +3,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pondoxx"
+    android:background="#000000"
     android:fitsSystemWindows="true"
     tools:context=".AgregarDatosActivity">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/fondocurvo"
-        android:scaleType="centerCrop"
-        android:alpha="0.5"/>
 
 
     <!-- Título de la actividad -->
     <TextView
         android:id="@+id/agregar_datos_title"
-        android:layout_width="140dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="70dp"
+        android:layout_width="216dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="serif"
-        android:text="MEDIDAS"
-        android:textColor="#D3D3D3"
-        android:textSize="30sp"
+        android:text="Actualiza tus medidas"
+        android:textColor="#FFFF"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Separador debajo del título -->
+  -->
 
 
-    <!-- Botón de atrás alineado con el título -->
-
-    <!-- Campo para el peso -->
 
     <ImageButton
-        android:id="@+id/back_button"
-        android:layout_width="25dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="68dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:contentDescription="Botón de Atrás"
-        android:scaleType="fitCenter"
-        android:src="@drawable/atras"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Otros campos de entrada (Altura, Pecho, etc.) -->
-
-    <ImageButton
-        android:id="@+id/camara"
+        android:id="@+id/boton_ver_fotos"
         android:layout_width="39dp"
         android:layout_height="40dp"
-        android:layout_marginStart="352dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="16dp"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:contentDescription="Camara"
-        android:scaleType="fitCenter"
+        android:contentDescription="Ver Fotos de Progreso"
         android:src="@drawable/camarabuena"
-        app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
 
     <EditText
         android:id="@+id/peso_input"
@@ -71,8 +51,9 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="120dp"
         android:layout_marginEnd="32dp"
-        android:backgroundTint="#D3D3D3"
+        android:backgroundTint="#b89454"
         android:hint="Peso (kg)"
+        android:fontFamily="serif"
         android:inputType="numberDecimal"
         android:padding="16dp"
         android:textColor="#FFFFFf"
@@ -90,9 +71,10 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:hint="Altura (cm)"
+        android:fontFamily="serif"
         android:inputType="number"
         android:textColor="#FFFFFf"
-        android:backgroundTint="#D3D3D3"
+        android:backgroundTint="#b89454"
         android:textColorHint="#B0B0B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -107,9 +89,10 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:hint="Medida Pecho (cm)"
+        android:fontFamily="serif"
         android:inputType="numberDecimal"
         android:textColor="#FFFFFf"
-        android:backgroundTint="#D3D3D3"
+        android:backgroundTint="#b89454"
         android:textColorHint="#B0B0B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,8 +108,9 @@
         android:layout_marginEnd="32dp"
         android:hint="Medida Cintura (cm)"
         android:inputType="numberDecimal"
+        android:fontFamily="serif"
         android:textColor="#FFFFFf"
-        android:backgroundTint="#D3D3D3"
+        android:backgroundTint="#b89454"
         android:textColorHint="#B0B0B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -143,7 +127,8 @@
         android:hint="Medida Brazo (cm)"
         android:inputType="numberDecimal"
         android:textColor="#FFFFFf"
-        android:backgroundTint="#D3D3D3"
+        android:backgroundTint="#b89454"
+        android:fontFamily="serif"
         android:textColorHint="#B0B0B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -156,12 +141,15 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/button_momt"
+        android:background="@drawable/button_siguiente"
         android:padding="16dp"
         android:text="Modificar Datos"
-        android:textColor="#D3D3D3"
+        android:fontFamily="serif"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/brazo_input" />

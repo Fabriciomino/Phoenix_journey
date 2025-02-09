@@ -4,32 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pondoxx"
+    android:background="#000000"
     tools:context=".ObjetivoPrincipalActivity">
 
-    <!-- Tu fondo actual -->
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/fondocurvo"
-        android:scaleType="centerCrop"
-        android:alpha="0.5" />
     <TextView
         android:id="@+id/register_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="OBJETIVO"
-        android:textColor="#F5F5F5"
-        android:textSize="30sp"
+        android:text="Objetivo"
+        android:textColor="#FFFF"
+        android:fontFamily="serif"
+        android:textSize="20sp"
         android:layout_marginTop="70dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:fontFamily="serif"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <Button
+    <!-- Botón Aumento de Masa Muscular -->
+    <RelativeLayout
         android:id="@+id/aumento_muscular_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -38,46 +30,120 @@
         android:layout_marginEnd="32dp"
         android:background="@drawable/button_momt"
         android:padding="16dp"
-        android:text="Aumento de Masa Muscular"
-        android:textColor="#FFFF"
-        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
+        <TextView
+            android:id="@+id/aumento_muscular_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aumento de Masa Muscular"
+            android:fontFamily="serif"
+            android:textColor="#FFFF"
+            android:textSize="15sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:padding="8dp"/>
+
+        <ImageView
+            android:id="@+id/aumento_muscular_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/check"
+            android:visibility="gone"/> <!-- Oculto por defecto -->
+    </RelativeLayout>
+
+    <!-- Botón Pérdida de Peso -->
+    <RelativeLayout
         android:id="@+id/perdida_peso_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/button_momt"
         android:padding="16dp"
-        android:text="Pérdida de Peso"
-        android:textColor="#FFFF"
-        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/aumento_muscular_button" />
+        app:layout_constraintTop_toBottomOf="@id/aumento_muscular_button">
 
-    <Button
+        <TextView
+            android:id="@+id/perdida_peso_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pérdida de Peso"
+            android:fontFamily="serif"
+            android:textColor="#FFFF"
+            android:textSize="15sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:padding="8dp"/>
+
+        <ImageView
+            android:id="@+id/perdida_peso_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/check"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <!-- Botón Ganancia de Fuerza -->
+    <RelativeLayout
         android:id="@+id/ganancia_fuerza_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/button_momt"
         android:padding="16dp"
-        android:text="Ganancia de Fuerza"
-        android:textColor="#FFFF"
-        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/perdida_peso_button" />
+        app:layout_constraintTop_toBottomOf="@id/perdida_peso_button">
 
+        <TextView
+            android:id="@+id/ganancia_fuerza_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ganancia de Fuerza"
+            android:fontFamily="serif"
+            android:textColor="#FFFF"
+            android:textSize="15sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:padding="8dp"/>
+
+        <ImageView
+            android:id="@+id/ganancia_fuerza_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/check"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <!-- Botón Siguiente -->
+    <Button
+        android:id="@+id/siguiente_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/button_siguiente_default"
+        android:padding="10dp"
+        android:text="Siguiente"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

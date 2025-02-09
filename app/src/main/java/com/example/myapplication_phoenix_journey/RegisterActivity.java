@@ -1,4 +1,4 @@
-package com.example.myapplication_phoenix_journey;
+package com.example.myapplication_phoenix_journey; // Paquete de la actividad
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
+import com.example.myapplication_phoenix_journey.basesdedatos.MiBaseDeDatos; // Importa la clase desde el paquete de base de datos
+
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText usernameInput;
@@ -18,22 +21,23 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText confirmPasswordInput;
     private Button registerButton;
     private ImageButton backButton;
-
+    private MiBaseDeDatos dbHelper; // Declarar la referencia de la base de datos
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        // Eliminar la ActionBar (nombre de la clase en la parte superior)
+
+        // Ocultar la barra de acción (si está presente) y hacer la ventana a pantalla completa
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-        // Configurar la ventana para un diseño de pantalla completa
         getWindow().setFlags(
                 android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         );
 
+        dbHelper = new MiBaseDeDatos(this); // Instancia de la base de datos
 
         // Vincular los elementos del layout con las variables
         usernameInput = findViewById(R.id.username_input);
@@ -43,40 +47,47 @@ public class RegisterActivity extends AppCompatActivity {
         registerButton = findViewById(R.id.register_button);
         backButton = findViewById(R.id.back_button);
 
-
-        // Establecer el OnClickListener para el botón de registro
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Obtener los valores ingresados en los campos de texto
                 String username = usernameInput.getText().toString();
                 String email = emailInput.getText().toString();
                 String password = passwordInput.getText().toString();
                 String confirmPassword = confirmPasswordInput.getText().toString();
 
-                // Validar los campos
+                // Validación de campos vacíos
                 if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
                     Toast.makeText(RegisterActivity.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
-                } else if (!password.equals(confirmPassword)) {
+                }
+                // Validación de contraseñas
+                else if (!password.equals(confirmPassword)) {
                     Toast.makeText(RegisterActivity.this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
+                }
+                // Comprobar si el nombre de usuario ya existe
+                else if (dbHelper.usuarioExiste(username)) {
+                    Toast.makeText(RegisterActivity.this, "Este nombre de usuario ya está registrado", Toast.LENGTH_SHORT).show();
                 } else {
-
-                    Toast.makeText(RegisterActivity.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
-
-                    // Pasar a la siguiente actividad (ObjetivoPrincipalActivity)
-                    Intent intent = new Intent(RegisterActivity.this, ObjetivoPrincipalActivity.class);
-                    startActivity(intent);
-                    finish(); // Cerrar la actividad de registro
+                    // Registrar al usuario en la base de datos
+                    long id = dbHelper.insertarUsuario(username, email, password);
+                    if (id > 0) {
+                        Toast.makeText(RegisterActivity.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(RegisterActivity.this, ObjetivoPrincipalActivity.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        Toast.makeText(RegisterActivity.this, "Error al registrar usuario. Intente nuevamente.", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
+
+        // Navegar hacia la pantalla principal al presionar el botón de retroceso
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Crear una intención para ir a la
                 Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-                startActivity(intent); // Iniciar la actividad
-                finish(); // Cerrar la actividad de login
+                startActivity(intent);
+                finish();
             }
         });
     }

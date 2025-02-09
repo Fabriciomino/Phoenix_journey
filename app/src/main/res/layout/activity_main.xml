@@ -12,27 +12,43 @@
         android:layout_height="match_parent"
         android:background="#000000" />
 
-    <!-- Tu fondo actual -->
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/fondocurvo"
-        android:scaleType="centerCrop"
-        android:alpha="0.5"/>
 
     <TextView
         android:id="@+id/title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="95dp"
+        android:layout_marginTop="96dp"
         android:fontFamily="serif"
         android:text="Phoenix Journey"
-        android:textColor="#F5F5F5"
+        android:textColor="#FFFF"
         android:textSize="30sp"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#b89454"
+        app:layout_constraintEnd_toEndOf="@id/title_text"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/title_text"
+        app:layout_constraintTop_toBottomOf="@id/title_text" />
+
+    <TextView
+        android:id="@+id/lema_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="serif"
+        android:text="R  E  N  A  C  E   -   V  U  E  L  A"
+        android:textColor="#FFFF"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_text" />
 
     <ImageView
         android:id="@+id/fenix_image"
@@ -62,18 +78,26 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:background="@drawable/button_shape"
+            android:background="@drawable/button_siguiente"
             android:text="Iniciar sesión"
-            android:textColor="#ffff" />
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            android:textColor="#000000" />
 
         <Button
             android:id="@+id/register_button"
-            android:layout_width="130dp"
+            android:layout_width="126dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/button_momt"
             android:text="Registrarse"
+            android:fontFamily="serif"
+            android:textStyle="bold"
             android:textColor="#ffff" />
+
     </LinearLayout>
+
+   
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

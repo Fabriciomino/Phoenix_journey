@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".PhoenixJourneyFragment">
+
+
+
+
+    <!-- Título de la actividad -->
+    <TextView
+        android:id="@+id/phoenix_journey_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DESAFÍOS"
+        android:fontFamily="serif"
+        android:textColor="#FFFF"
+        android:textSize="20sp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Botón de Atrás -->
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="25dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="68dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Botón de Atrás"
+        android:scaleType="fitCenter"
+        android:src="@drawable/atras"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/amigos_button"
+        android:layout_width="33dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="360dp"
+        android:layout_marginTop="64dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Añadir amigos"
+        android:scaleType="fitCenter"
+        android:src="@drawable/add2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fuerza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="152dp"
+        android:text="FUERZA"
+        android:fontFamily="serif"
+        android:textStyle="italic"
+        android:textColor="#FFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/separadorfuerza"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#b89454"
+        app:layout_constraintEnd_toEndOf="@id/fuerza"
+        app:layout_constraintStart_toStartOf="@id/fuerza"
+        app:layout_constraintTop_toBottomOf="@id/fuerza" />
+
+
+    <TextView
+        android:id="@+id/banca"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="#D3D3"
+        android:gravity="center_vertical"
+        android:onClick="toggleBancaButton"
+        android:padding="16dp"
+        android:text="100 kg en press banca (1RM)"
+        android:fontFamily="serif"
+        android:textStyle="italic"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#B0B0B0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phoenix_journey_title" />
+
+    <View
+        android:id="@+id/separador"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#b89454"
+        app:layout_constraintEnd_toEndOf="@id/banca"
+        app:layout_constraintStart_toStartOf="@id/banca"
+        app:layout_constraintTop_toBottomOf="@id/banca" />
+
+    <!-- El ImageButton que será mostrado/ocultado -->
+    <ImageButton
+        android:id="@+id/banca_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="-50dp"
+        android:layout_marginStart="300dp"
+        android:alpha="0.9"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Banca Button"
+        android:scaleType="fitCenter"
+        android:src="@drawable/fenix"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separador" />
+
+    <!-- Sentadilla -->
+
+    <!-- Separador debajo de Sentadilla -->
+
+
+    <TextView
+        android:id="@+id/sentadilla"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="#D3D3D3"
+        android:gravity="center_vertical"
+        android:onClick="toggleSentadillaButton"
+        android:padding="16dp"
+        android:text="1,5x peso en sentadilla (1RM)"
+        android:fontFamily="serif"
+        android:textStyle="italic"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#B0B0B0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/banca" />
+
+    <View
+        android:id="@+id/separadorsentadilla"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#b89454"
+        app:layout_constraintEnd_toEndOf="@id/sentadilla"
+        app:layout_constraintStart_toStartOf="@id/sentadilla"
+        app:layout_constraintTop_toBottomOf="@id/sentadilla" />
+    <ImageButton
+        android:id="@+id/sentadilla_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="-50dp"
+        android:layout_marginStart="300dp"
+        android:alpha="0.9"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Sentadilla Button"
+        android:scaleType="fitCenter"
+        android:src="@drawable/fenix"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separadorsentadilla" />
+
+    <!-- Separador debajo de Peso Muerto -->
+    <TextView
+        android:id="@+id/pesomuerto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="#D3D3D3"
+        android:onClick="togglePesomuertoButton"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:text="2x peso en peso muerto (1RM)"
+        android:fontFamily="serif"
+        android:textStyle="italic"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#B0B0B0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sentadilla" />
+
+    <View
+        android:id="@+id/separadorpesomuerto"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#b89454"
+        app:layout_constraintEnd_toEndOf="@id/pesomuerto"
+        app:layout_constraintStart_toStartOf="@id/pesomuerto"
+        app:layout_constraintTop_toBottomOf="@id/pesomuerto" />
+
+    <ImageButton
+        android:id="@+id/pesomuerto_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="-50dp"
+        android:layout_marginStart="300dp"
+        android:alpha="0.9"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Peso Muerto Button"
+        android:scaleType="fitCenter"
+        android:src="@drawable/fenix"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separadorpesomuerto" />
+
+    <!-- Diarios -->
+    <TextView
+        android:id="@+id/diarios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="444dp"
+        android:text="DIARIOS"
+        android:textColor="#F5F5F5"
+        android:fontFamily="serif"
+        android:textStyle="italic"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Separador debajo de DIARIOS -->
+    <View
+        android:id="@+id/separadordiarios"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#b89454"
+        app:layout_constraintEnd_toEndOf="@id/diarios"
+        app:layout_constraintStart_toStartOf="@id/diarios"
+        app:layout_constraintTop_toBottomOf="@id/diarios" />
+
+
+    <!-- Separador debajo de Pasos -->
+
+    <TextView
+        android:id="@+id/pasos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="#D3D3D3"
+        android:gravity="center_vertical"
+        android:onClick="togglePasosButton"
+        android:padding="16dp"
+        android:text="15.000 pasos al dia"
+        android:fontFamily="serif"
+        android:textStyle="italic"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#B0B0B0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/diarios" />
+
+    <View
+        android:id="@+id/separadorpasos"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#b89454"
+        app:layout_constraintEnd_toEndOf="@id/pasos"
+        app:layout_constraintStart_toStartOf="@id/pasos"
+        app:layout_constraintTop_toBottomOf="@id/pasos" />
+
+    <ImageButton
+        android:id="@+id/pasos_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="-50dp"
+        android:layout_marginStart="300dp"
+        android:alpha="0.9"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Pasos Button"
+        android:scaleType="fitCenter"
+        android:src="@drawable/fenix"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separadorpasos" />
+
+    <!-- Entrenamiento -->
+
+    <!-- Separador debajo de Entrenamiento -->
+
+    <TextView
+        android:id="@+id/entrenamiento"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="#D3D3D3"
+        android:onClick="toggleEntrenamientoButton"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:text="Entrenamiento completado"
+        android:textColor="#FFFFFF"
+        android:fontFamily="serif"
+        android:textStyle="italic"
+        android:textColorHint="#B0B0B0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pasos" />
+
+    <View
+        android:id="@+id/separadorentrenamiento"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#b89454"
+        app:layout_constraintEnd_toEndOf="@id/entrenamiento"
+        app:layout_constraintStart_toStartOf="@id/entrenamiento"
+        app:layout_constraintTop_toBottomOf="@id/entrenamiento" />
+
+    <ImageButton
+        android:id="@+id/entrenamiento_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="-50dp"
+        android:layout_marginStart="300dp"
+        android:alpha="0.9"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Entrenamiento Button"
+        android:scaleType="fitCenter"
+        android:src="@drawable/fenix"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separadorentrenamiento" />
+
+    <TextView
+        android:id="@+id/alimentacion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="#D3D3D3"
+        android:fontFamily="serif"
+        android:gravity="center_vertical"
+        android:onClick="toggleAlimentacionButton"
+        android:padding="16dp"
+        android:text="Buena alimentación"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#B0B0B0"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/diarios" />
+
+    <View
+        android:id="@+id/separadoralimentacion"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#b89454"
+        app:layout_constraintEnd_toEndOf="@id/alimentacion"
+        app:layout_constraintStart_toStartOf="@id/alimentacion"
+        app:layout_constraintTop_toBottomOf="@id/alimentacion" />
+    <ImageButton
+        android:id="@+id/alimentacion_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="-50dp"
+        android:layout_marginStart="300dp"
+        android:alpha="0.9"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Alimentación Button"
+        android:scaleType="fitCenter"
+        android:src="@drawable/fenix"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/separadoralimentacion" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

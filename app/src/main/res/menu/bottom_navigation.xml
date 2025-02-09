@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/fenix_journey"
+        android:icon="@drawable/rutina"
+        android:title="@string/desc_fenix"
+        android:scaleType="centerCrop"
+        android:orderInCategory="1" />
+
+    <item
+        android:id="@+id/nutricion"
+        android:icon="@drawable/nutricion"
+        android:title="@string/desc_nutricion"
+        android:scaleType="centerCrop"
+        android:orderInCategory="2" />
+
+    <item
+        android:id="@+id/menu_icon_button"
+        android:icon="@drawable/home"
+        android:title="@string/desc_menu"
+        android:scaleType="centerCrop"
+        android:orderInCategory="3" />
+
+    <item
+        android:id="@+id/calendario_button"
+        android:icon="@drawable/calendario"
+        android:title="@string/desc_calendario"
+        android:scaleType="centerCrop"
+        android:orderInCategory="4" />
+
+    <item
+        android:id="@+id/mas"
+        android:icon="@drawable/mas"
+        android:title="@string/desc_usuario"
+        android:scaleType="centerCrop"
+        android:orderInCategory="5" />
+</menu>

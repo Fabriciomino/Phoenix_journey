@@ -1,98 +1,63 @@
 package com.example.myapplication_phoenix_journey;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MenuActivity extends AppCompatActivity {
-
-    private ImageButton centerButton;
-    private LinearLayout misRutinasButton, sesionButton;
-    private LinearLayout progresoButton, nutricionButton;
-    private ImageButton calendarioButton, usuarioButton, menuIconButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        // Eliminar la ActionBar (nombre de la clase en la parte superior)
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
+        // Establecer el fragmento inicial directamente
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new HomeFragment())
+                    .commit();
         }
 
-        // Configurar la ventana para un diseño de pantalla completa
-        getWindow().setFlags(
-                android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-        );
+        // Configurar el menú inferior
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
 
-        // Inicializar los botones (ahora LinearLayouts en lugar de Buttons)
-        centerButton = findViewById(R.id.center_button);
-        misRutinasButton = findViewById(R.id.top_left_button);
-        sesionButton = findViewById(R.id.top_right_button);
-        progresoButton = findViewById(R.id.bottom_left_button);
-        nutricionButton = findViewById(R.id.bottom_right_button);
-        calendarioButton = findViewById(R.id.calendario_button);
-        usuarioButton = findViewById(R.id.usuario_button);
-        menuIconButton = findViewById(R.id.menu_icon_button);
+        // Establecer el primer ítem como seleccionado
+        bottomNavigationView.setSelectedItemId(R.id.menu_icon_button); // Inicialmente se selecciona el Home
 
-        // Configurar eventos de clic para el botón central
-        centerButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MenuActivity.this,PhoenixJourneyActivity.class);
-            startActivity(intent);
+        bottomNavigationView.findViewById(R.id.menu_icon_button).setOnClickListener(v -> {
+            loadFragment(new HomeFragment());
+            bottomNavigationView.setSelectedItemId(R.id.menu_icon_button);  // Actualizar el estado del item
         });
 
-        // Configuración de cada LinearLayout como si fuera un botón
-        misRutinasButton.setOnClickListener(v -> {
-            startActivity(new Intent(MenuActivity.this, CrearRutinaActivity.class));
+        bottomNavigationView.findViewById(R.id.fenix_journey).setOnClickListener(v -> {
+            loadFragment(new PhoenixJourneyFragment());
+            bottomNavigationView.setSelectedItemId(R.id.fenix_journey);  // Actualizar el estado del item
         });
 
-        sesionButton.setOnClickListener(v -> {
-            startActivity(new Intent(MenuActivity.this, IniciarEntrenamientoActivity.class));
+        bottomNavigationView.findViewById(R.id.nutricion).setOnClickListener(v -> {
+            loadFragment(new DietaFragment());
+            bottomNavigationView.setSelectedItemId(R.id.nutricion);  // Actualizar el estado del item
         });
 
-        progresoButton.setOnClickListener(v -> {
-            startActivity(new Intent(MenuActivity.this, ProgresoCorporalActivity.class));
+        bottomNavigationView.findViewById(R.id.calendario_button).setOnClickListener(v -> {
+            loadFragment(new CalendarioFragment());
+            bottomNavigationView.setSelectedItemId(R.id.calendario_button);  // Actualizar el estado del item
         });
 
-        nutricionButton.setOnClickListener(v -> {
-            startActivity(new Intent(MenuActivity.this, DietaActivity.class));
-        });
-
-        // Evento para el botón de calendario
-        calendarioButton.setOnClickListener(v -> {
-            showToast("Calendario");
-            // Iniciar la actividad CalendarioActivity
-            Intent intent = new Intent(MenuActivity.this, CalendarioActivity.class);
-            startActivity(intent);
-        });
-
-        // Evento para el botón de usuario
-        usuarioButton.setOnClickListener(v -> {
-            showToast("Usuario");
-            // Iniciar la actividad MiUsuarioActivity
-            Intent intent = new Intent(MenuActivity.this, MiUsuarioActivity.class);
-            startActivity(intent);
-        });
-
-        // Evento para el botón de menú
-        menuIconButton.setOnClickListener(v -> {
-            showToast("Menú");
-            // Aquí puedes agregar la lógica para abrir el menú o realizar cualquier acción que desees
+        bottomNavigationView.findViewById(R.id.mas).setOnClickListener(v -> {
+            loadFragment(new MiUsuarioFragment());
+            bottomNavigationView.setSelectedItemId(R.id.mas);  // Actualizar el estado del item
         });
     }
 
-    /**
-     * Método auxiliar para mostrar un mensaje Toast.
-     *
-     * @param message El mensaje que se mostrará.
-     */
-    private void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    private boolean loadFragment(Fragment fragment) {
+        if (fragment != null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
     }
 }

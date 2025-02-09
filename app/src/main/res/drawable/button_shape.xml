@@ -1,6 +1,19 @@
-<!-- res/drawable/button_shape.xml -->
+
+
+    <!-- res/drawable/button_shape.xml -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#3d3d3d"/>
-    <corners android:radius="8dp"/>
-    <stroke android:color="#D3D3D3" android:width="2dp"/>
+<!-- Fondo con un degradado dorado -->
+<gradient
+    android:startColor="#FFD699"
+    android:centerColor="#8b6f47"
+    android:endColor="#FFD699"
+    android:angle="90"
+    android:type="linear" />
+
+
+<!-- Bordes redondeados más definidos -->
+<corners android:radius="18dp" />
+
+<!-- Sombras internas para resaltar el relieve -->
+<innerRadius android:radius="18dp" />
 </shape>

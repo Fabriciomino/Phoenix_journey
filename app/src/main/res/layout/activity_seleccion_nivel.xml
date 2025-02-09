@@ -4,29 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pondoxx"
+    android:background="#000000"
     tools:context=".SeleccionNivelActivity">
 
-    <!-- Tu fondo actual -->
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/fondocurvo"
-        android:scaleType="centerCrop"
-        android:alpha="0.7"/>
 
     <TextView
         android:id="@+id/selec_nivel_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:text="EXPERIENCIA"
+        android:layout_marginTop="80dp"
         android:fontFamily="serif"
+        android:text="Selecciona tu nivel de experiencia"
         android:textColor="#F5F5F5"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.625"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <ImageButton
         android:id="@+id/back_button"
         android:layout_width="25dp"
@@ -41,45 +36,91 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <Button
+    <RelativeLayout
         android:id="@+id/boton_principiante"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="244dp"
-        android:background="@drawable/button_selector"
-        android:padding="17dp"
-        android:text="Principiante"
-        android:textColor="#FFFFFF"
-        android:textSize="25sp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="252dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/button_momt"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/selec_nivel_title" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
+        <TextView
+            android:id="@+id/principiante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="serif"
+            android:padding="8dp"
+            android:text="Principiante"
+            android:textColor="#FFFF"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/principiante_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/check"
+            android:visibility="gone" /> <!-- Oculto por defecto -->
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/boton_avanzado"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Avanzado"
-        android:textColor="#FFFF"
-        android:background="@drawable/button_selector"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/boton_principiante"
-    android:layout_marginTop="16dp"
-    android:textSize="25sp"
-    android:padding="16dp" />
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="344dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/button_momt"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/avanzado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="serif"
+            android:padding="8dp"
+            android:text="Avazando"
+            android:textColor="#FFFF"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/avanzado_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/check"
+            android:visibility="gone" /> <!-- Oculto por defecto -->
+    </RelativeLayout>
 
     <Button
         android:id="@+id/boton_terminar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="40dp"
-        android:backgroundTint="#000000"
-        android:padding="16dp"
+        android:padding="15dp"
         android:text="Terminar"
-        android:textColor="#D3D3D3"
+        android:fontFamily="serif"
+        android:background="@drawable/button_siguiente_default"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

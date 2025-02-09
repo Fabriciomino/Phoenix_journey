@@ -7,7 +7,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Phoenix journey"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PhoenixJourney"
@@ -23,10 +23,7 @@
             </intent-filter>
         </activity>
 
-        <!-- Actividad del menú -->
-        <activity
-            android:name=".MenuActivity"
-            android:exported="true" />
+
 
         <!-- Actividad de registro -->
         <activity android:name=".RegisterActivity"
@@ -40,7 +37,7 @@
         <!-- Actividad para agregar datos -->
         <activity
             android:name=".AgregarDatosActivity"
-        android:exported="true" />
+            android:exported="true" />
 
         <!-- Actividad para seleccionar nivel -->
         <activity android:name=".SeleccionNivelActivity"
@@ -50,32 +47,40 @@
             android:name=".LoginActivity"
             android:exported="true" />
 
-        <activity android:name=".CrearRutinaActivity"
-            />
+
 
         <activity android:name=".ProgresoCorporalActivity"
             />
-        <activity android:name=".DietaActivity"
             />
-        <activity android:name=".CalendarioActivity"
-            />
-        <activity android:name=".IniciarEntrenamientoActivity" />
 
-        <activity android:name=".PhoenixJourneyActivity" />
         <activity android:name=".NutrientesActivityMantenimiento" />
 
         <!-- NutrientesActivityVolumen -->
         <activity android:name=".NutrientesActivityVolumen" />
 
         <!-- NutrientesActivityDeficit -->
-        <activity android:name=".NutrientesActivity" />
+        <activity android:name=".NutrientesActivityDefinicion" />
         <activity android:name=".EditarRutinaActivity"/>
         <activity android:name=".AñadirEjercicioActivity"/>
-        <activity android:name=".MiUsuarioActivity" />
         <activity android:name=".AmigosActivity"/>
+        <activity android:name=".FotosProgresoActivity"/>
+        <activity android:name=".EjerHombroActivity"/>
+        <activity android:name=".EjerBicepsActivity"/>
+        <activity android:name=".EjerAbsActivity"/>
+        <activity android:name=".EjerCuadricepsActivity"/>
+        <activity android:name=".EjerEspaldaActivity"/>
+        <activity android:name=".EjerFemoralesActivity"/>
+        <activity android:name=".EjerTricepsActivity"/>
+        <activity android:name=".EjerPechoActivity"/>
+        <activity android:name=".EntrenamientoActivity"/>
+        <activity android:name=".MenuActivity"/>
+        <activity android:name=".InformacionCuentaActivity"/>
+
 
 
 
     </application>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
 
 </manifest>

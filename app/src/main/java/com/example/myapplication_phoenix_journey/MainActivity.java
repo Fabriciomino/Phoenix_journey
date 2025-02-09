@@ -8,34 +8,38 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication_phoenix_journey.basesdedatos.MiBaseDeDatos; // Importa la clase de la base de datos
+
 public class MainActivity extends AppCompatActivity {
 
-    // Aquí iría una posible variable para verificar el estado del usuario, por ejemplo, un SharedPreference o una variable global
     private boolean isUserLoggedIn = false; // Este es solo un ejemplo, deberías implementarlo según tu flujo de login
+    private MiBaseDeDatos dbHelper; // Declarar la base de datos
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Eliminar la ActionBar (nombre de la clase en la parte superior)
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-        // Configurar la ventana para un diseño de pantalla completa
+
         getWindow().setFlags(
                 android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         );
 
+        // Inicializar el objeto de la base de datos
+        dbHelper = new MiBaseDeDatos(this);
 
         Button loginButton = findViewById(R.id.login_button);
         Button registerButton = findViewById(R.id.register_button);
 
-        // Verificación de sesión (si el usuario está logueado, se redirige automáticamente)
+        // Verificación de sesión
         if (isUserLoggedIn) {
-            Intent intent = new Intent(MainActivity.this, MenuActivity.class); // O la actividad a la que quieres ir
+            Intent intent = new Intent(MainActivity.this, HomeFragment.class); // O la actividad a la que quieres ir
             startActivity(intent);
-            finish(); // Cerrar la actividad de login
+            finish();
         }
 
         // Acción para el botón de iniciar sesión
@@ -45,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Iniciar sesión presionado", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
-                finish(); // Opcional: cerrar la actividad actual
+                finish();
             }
         });
 
@@ -58,5 +62,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        
     }
 }

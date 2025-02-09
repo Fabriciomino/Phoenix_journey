@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Estado cuando el botón es presionado -->
+    <item android:drawable="@drawable/button_siguente_selected" android:state_pressed="true"/>
+    <!-- Estado cuando el botón tiene foco -->
+    <item android:drawable="@drawable/button_siguente_selected" android:state_focused="true"/>
+    <!-- Estado por defecto (cuando no está presionado ni tiene foco) -->
+    <item android:drawable="@drawable/button_siguiente_default"/>
+
+</selector>

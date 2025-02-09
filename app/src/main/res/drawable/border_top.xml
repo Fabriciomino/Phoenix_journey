@@ -1,0 +1,8 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#000000" /> <!-- Color de fondo (puedes cambiarlo si lo deseas) -->
+    <stroke
+        android:color="#b89454"
+    android:width="2dp" />
+    <padding
+        android:top="2dp" />
+</shape>

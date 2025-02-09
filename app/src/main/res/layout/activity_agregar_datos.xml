@@ -3,45 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pondoxx"
+    android:background="#000000"
     android:fitsSystemWindows="true"
     tools:context=".AgregarDatosActivity">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/fondocurvo"
-        android:scaleType="centerCrop"
-        android:alpha="0.5"/>
 
-
-    <!-- Título de la actividad -->
     <TextView
         android:id="@+id/agregar_datos_title"
-        android:layout_width="140dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="70dp"
-        android:fontFamily="serif"
-        android:text="MEDIDAS"
-        android:textColor="#D3D3D3"
-        android:textSize="30sp"
+        android:layout_width="189dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="sans-serif"
+        android:text="Agrega tus medidas"
+        android:textColor="#FFFF"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Separador debajo del título -->
-
-
-    <!-- Botón de atrás alineado con el título -->
-
-    <!-- Campo para el peso -->
 
     <ImageButton
         android:id="@+id/back_button"
         android:layout_width="25dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="70dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="Botón de Atrás"
         android:scaleType="fitCenter"
@@ -57,8 +43,10 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="120dp"
         android:layout_marginEnd="32dp"
-        android:backgroundTint="#D3D3D3"
+        android:backgroundTint="#b89454"
         android:hint="Peso (kg)"
+        android:fontFamily="serif"
+
         android:inputType="numberDecimal"
         android:padding="16dp"
         android:textColor="#FFFFFf"
@@ -76,9 +64,10 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:hint="Altura (cm)"
+        android:fontFamily="serif"
         android:inputType="number"
         android:textColor="#FFFFFf"
-        android:backgroundTint="#D3D3D3"
+        android:backgroundTint="#b89454"
         android:textColorHint="#B0B0B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +84,8 @@
         android:hint="Medida Pecho (cm)"
         android:inputType="numberDecimal"
         android:textColor="#FFFFFf"
-        android:backgroundTint="#D3D3D3"
+        android:fontFamily="serif"
+        android:backgroundTint="#b89454"
         android:textColorHint="#B0B0B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -112,7 +102,8 @@
         android:hint="Medida Cintura (cm)"
         android:inputType="numberDecimal"
         android:textColor="#FFFFFf"
-        android:backgroundTint="#D3D3D3"
+        android:backgroundTint="#b89454"
+        android:fontFamily="serif"
         android:textColorHint="#B0B0B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -127,9 +118,10 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:hint="Medida Brazo (cm)"
+        android:fontFamily="serif"
         android:inputType="numberDecimal"
         android:textColor="#FFFFFf"
-        android:backgroundTint="#D3D3D3"
+        android:backgroundTint="#b89454"
         android:textColorHint="#B0B0B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -142,12 +134,15 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="32dp"
-        android:background="@drawable/button_momt"
+        android:background="@drawable/button_siguiente"
         android:padding="16dp"
+        android:textStyle="bold"
+        android:textSize="15sp"
         android:text="Guardar Datos"
-        android:textColor="#D3D3D3"
+        android:fontFamily="serif"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/brazo_input" />

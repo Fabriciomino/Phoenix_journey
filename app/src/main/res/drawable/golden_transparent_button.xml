@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Establece un fondo con degradado -->
+    <gradient
+        android:startColor="#70d8b76e"
+    android:centerColor="#d8b76e"
+    android:endColor="#70d8b76e"
+    android:angle="45" />
+
+    <!-- Establece bordes redondeados -->
+    <corners android:radius="8dp"/>
+
+
+</shape>

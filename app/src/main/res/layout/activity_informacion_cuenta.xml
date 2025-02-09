@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".InformacionCuentaActivity">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/title_info_cuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Información de la Cuenta"
+        android:textColor="#FFFF"
+        android:fontFamily="serif"
+        android:textSize="20sp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Nombre de usuario -->
+    <TextView
+        android:id="@+id/username_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre de usuario:"
+        android:textColor="#FFFF"
+        android:fontFamily="serif"
+        android:textSize="16sp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_info_cuenta"
+        android:layout_marginStart="32dp" />
+
+    <TextView
+        android:id="@+id/username_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usuario123"
+        android:textColor="#FFFF"
+        android:fontFamily="serif"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/username_label"
+        app:layout_constraintTop_toTopOf="@id/username_label"
+        android:layout_marginStart="16dp" />
+
+    <!-- Correo electrónico -->
+    <TextView
+        android:id="@+id/email_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correo electrónico:"
+        android:textColor="#FFFF"
+        android:fontFamily="serif"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/username_label"
+        android:layout_marginStart="32dp" />
+
+    <!-- Contraseña -->
+    <TextView
+        android:id="@+id/email_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="serif"
+        android:text="usuario@example.com"
+        android:textColor="#FFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/email_label"
+        app:layout_constraintTop_toTopOf="@id/email_label" />
+
+    <TextView
+        android:id="@+id/password_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contraseña:"
+        android:textColor="#FFFF"
+        android:fontFamily="serif"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email_label"
+        android:layout_marginStart="32dp" />
+
+
+    <!-- Botón para eliminar la cuenta -->
+
+    <TextView
+        android:id="@+id/password_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:fontFamily="serif"
+        android:text="********"
+        android:textColor="#FFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/password_label"
+        app:layout_constraintTop_toTopOf="@id/password_label" />
+
+    <ImageButton
+        android:id="@+id/eye_button"
+        android:layout_width="22dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="4dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Mostrar/Ocultar contraseña"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ojo"
+        app:layout_constraintStart_toEndOf="@id/password_label"
+        app:layout_constraintTop_toTopOf="@id/password_label" />
+
+    <Button
+        android:id="@+id/delete_account_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="484dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/button_shape_red"
+        android:fontFamily="serif"
+        android:padding="16dp"
+        android:text="Eliminar Cuenta"
+        android:textColor="#FF0000"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_label" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

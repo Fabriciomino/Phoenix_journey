@@ -2,9 +2,15 @@
     <string name="app_name">My Application_Phoenix_Journey</string>
     <string name="fenix_image">Imagen del Fénix</string>
     <string name="center_button_description">Botón central para acceder a la funcionalidad principal</string>
-        <string name="desc_calendario">Botón de calendario</string>
-        <string name="desc_menu">Botón de menú</string>
-        <string name="desc_usuario">Botón de usuario</string>
+    <string name="desc_nutricion">Botón de nutrición</string>
+    <string name="desc_fenix">Botón de fenix journey</string>
+    <string name="desc_calendario">Botón de calendario</string>
+    <string name="desc_phoenix">Botón de phoenix journey</string>
+    <string name="desc_mas">Botón de más</string> <!-- Corregido "mas" a "más" -->
     <string name="calendario_title">Calendario</string>
     <string name="selected_date">Fecha seleccionada</string>
+
+    <!-- Agregué las cadenas faltantes -->
+    <string name="desc_menu">Descripción del menú</string>
+    <string name="desc_usuario">Descripción del usuario</string>
 </resources>

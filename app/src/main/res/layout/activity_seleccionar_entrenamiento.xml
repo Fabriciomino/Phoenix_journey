@@ -1,0 +1,54 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".FotosProgresoActivity">
+
+    <!-- Botón para Lunes -->
+    <LinearLayout
+        android:id="@+id/boton_entrenamiento_lunes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="556dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.377"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Imagen como botón -->
+        <ImageView
+            android:id="@+id/imagen_lunes"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/camarabuena" />
+
+        <!-- Texto al lado derecho de la imagen -->
+        <TextView
+            android:id="@+id/texto_lunes"
+            android:layout_width="233dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text=""
+            android:textColor="#D3D3D3"
+            android:textSize="16sp" />
+
+        <!-- EditText para ingresar rutina -->
+        <EditText
+            android:id="@+id/edit_lunes"
+            android:layout_width="233dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="Escribe tu rutina"
+            android:visibility="gone" /> <!-- Inicialmente oculto -->
+    </LinearLayout>
+    <!-- Agregar más días de la semana como el lunes aquí -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
