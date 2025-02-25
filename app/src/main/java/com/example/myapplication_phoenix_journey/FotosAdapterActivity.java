@@ -17,15 +17,20 @@ public class FotosAdapterActivity extends RecyclerView.Adapter<FotosAdapterActiv
 
     private ArrayList<Foto> fotosList;
     private OnFotoEliminarListener eliminarListener;
+    private OnFotoClickListener clickListener;
 
     public interface OnFotoEliminarListener {
         void onFotoEliminar(int position);
     }
 
+    public interface OnFotoClickListener {
+        void onFotoClick(Foto foto);
+    }
 
-    public FotosAdapterActivity(ArrayList<Foto> fotosList, OnFotoEliminarListener eliminarListener) {
+    public FotosAdapterActivity(ArrayList<Foto> fotosList, OnFotoEliminarListener eliminarListener, OnFotoClickListener clickListener) {
         this.fotosList = fotosList;
         this.eliminarListener = eliminarListener;
+        this.clickListener = clickListener;
     }
 
     @NonNull
@@ -42,6 +47,7 @@ public class FotosAdapterActivity extends RecyclerView.Adapter<FotosAdapterActiv
         holder.textFecha.setText(foto.getFecha());
 
         holder.botonEliminar.setOnClickListener(v -> eliminarListener.onFotoEliminar(position));
+        holder.imagenProgreso.setOnClickListener(v -> clickListener.onFotoClick(foto));
     }
 
     @Override

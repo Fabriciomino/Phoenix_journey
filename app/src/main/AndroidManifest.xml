@@ -75,12 +75,31 @@
         <activity android:name=".EntrenamientoActivity"/>
         <activity android:name=".MenuActivity"/>
         <activity android:name=".InformacionCuentaActivity"/>
+        <activity android:name=".ActivityImagenAmpliada"/>
+        <activity android:name=".AmigoDetalleActivity"/>
 
 
-
-
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+
+    <!-- Permiso para acceder a internet, si es necesario -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+
+
 
 
 </manifest>

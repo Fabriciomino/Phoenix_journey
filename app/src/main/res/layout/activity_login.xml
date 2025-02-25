@@ -7,111 +7,118 @@
     android:background="#000000"
     tools:context=".LoginActivity">
 
-
     <!-- Título de la pantalla -->
+
+    <!-- Texto de registro -->
     <TextView
         android:id="@+id/login_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Iniciar sesión"
+        android:layout_marginTop="140dp"
         android:fontFamily="serif"
-        android:textColor="#FFFF"
+        android:text="Iniciar sesión"
+        android:textColor="#FFFFFF"
         android:textSize="30sp"
-        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Botón de Atrás -->
-    <ImageButton
-        android:id="@+id/back_button"
-        android:layout_width="25dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="70dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:contentDescription="Botón de Atrás"
-        android:scaleType="fitCenter"
-        android:src="@drawable/atras"
+    <TextView
+        android:id="@+id/register_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="serif"
+        android:text="¿Es tu primera vez? Regístrate"
+        android:textColor="#B0B0B0"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/login_title" />
+
+    <!-- Texto de campo obligatorio para Nombre de Usuario -->
+    <TextView
+        android:id="@+id/username_required"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="serif"
+        android:text="* Nombre de usuario"
+        android:textColor="#B0B0B0"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/register_text" />
 
     <!-- Campo de Nombre de Usuario -->
     <EditText
         android:id="@+id/username_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="40dp"
-        android:backgroundTint="#b89454"
-        android:hint="Nombre de Usuario"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/edittext_background"
         android:fontFamily="serif"
+        android:hint="Nombre de Usuario"
         android:padding="16dp"
         android:textColor="#FFFFFF"
         android:textColorHint="#B0B0B0"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login_title" />
+        app:layout_constraintTop_toBottomOf="@id/username_required" />
 
-    <!-- Ícono de Usuario -->
-    <ImageView
-        android:id="@+id/user_icon"
-        android:layout_width="29dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="213dp"
-        android:src="@drawable/user"
+    <!-- Texto de campo obligatorio para Contraseña -->
+    <TextView
+        android:id="@+id/password_required"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="serif"
+        android:text="* Contraseña"
+        android:textColor="#B0B0B0"
+        android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login_title" />
+        app:layout_constraintTop_toBottomOf="@id/username_input" />
 
     <!-- Campo de Contraseña -->
     <EditText
         android:id="@+id/password_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/edittext_background"
         android:hint="Contraseña"
         android:inputType="textPassword"
         android:fontFamily="serif"
         android:textColor="#FFFFFF"
         android:textColorHint="#B0B0B0"
-        android:backgroundTint="#b89454"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/username_input" />
-
-    <ImageView
-        android:id="@+id/candado_icon"
-        android:layout_width="20dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:src="@drawable/cand"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/username_input" />
+        app:layout_constraintTop_toBottomOf="@id/password_required" />
 
     <!-- Botón de Iniciar Sesión -->
     <Button
         android:id="@+id/login_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/button_siguiente"
+        android:padding="10dp"
         android:text="Iniciar Sesión"
         android:textColor="#000000"
+        android:textSize="20sp"
         android:fontFamily="serif"
         android:textStyle="bold"
-        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password_input"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:padding="16dp" />
+        app:layout_constraintTop_toBottomOf="@id/password_input" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

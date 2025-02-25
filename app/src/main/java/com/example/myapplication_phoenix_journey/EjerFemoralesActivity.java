@@ -2,6 +2,7 @@ package com.example.myapplication_phoenix_journey;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import androidx.appcompat.app.AlertDialog;
@@ -21,32 +22,32 @@ public class EjerFemoralesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ejer_femorales);
 
-        // Eliminar la ActionBar (nombre de la clase en la parte superior)
-        ocultarActionBar();
+        // Ocultar la barra de acción si está disponible
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
-        // Configurar la ventana para un diseño de pantalla completa
-        configurarPantallaCompleta();
+        // Configurar la ventana para que ocupe toda la pantalla
+        getWindow().setFlags(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY,
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        );
 
         // Inicializar el botón "Atrás"
         inicializarBotonAtras();
 
         // Inicializar los botones de ejercicios de femorales
         inicializarBotonesEjercicios();
-    }
-
-    // Eliminar la ActionBar
-    private void ocultarActionBar() {
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
-    }
-
-    // Configurar la ventana para pantalla completa
-    private void configurarPantallaCompleta() {
-        getWindow().setFlags(
-                android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-        );
     }
 
     // Inicializar el botón "Atrás"

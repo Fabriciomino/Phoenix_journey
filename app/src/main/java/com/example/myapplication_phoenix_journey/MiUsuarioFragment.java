@@ -4,7 +4,10 @@ import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +18,11 @@ import androidx.fragment.app.Fragment;
 
 import com.example.myapplication_phoenix_journey.basesdedatos.MiBaseDeDatos;
 
+import java.io.File;
+
 public class MiUsuarioFragment extends Fragment {
 
-    private LinearLayout infoCuentaButton, ajustesButton, medidasButton, cerrarSesionButton;
+    private LinearLayout infoCuentaButton, ajustesButton, medidasButton, cerrarSesionButton, verPdfsButton;
     private MiBaseDeDatos miBaseDeDatos; // Instancia de la base de datos
 
     @Override
@@ -52,6 +57,7 @@ public class MiUsuarioFragment extends Fragment {
 
         cerrarSesionButton.setOnClickListener(v -> showCerrarSesionDialog());
 
+
         return view;
     }
 
@@ -83,23 +89,15 @@ public class MiUsuarioFragment extends Fragment {
 
     // Método para cerrar sesión y actualizar el estado del usuario
     private void cerrarSesion() {
-        // Obtener el usuario activo (por ejemplo, mediante un SharedPreference o un método similar)
-        int usuarioIdActivo = obtenerUsuarioIdActivo(); // Asegúrate de tener este método implementado
+        // Obtener el usuario activo
+        int usuarioIdActivo = miBaseDeDatos.obtenerUsuarioIdActivo();
 
         // Conectar a la base de datos y actualizar el estado "activo"
         SQLiteDatabase db = miBaseDeDatos.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("activo", 0); // Establecer el estado a inactivo (0)
+        values.put(MiBaseDeDatos.COLUMN_ACTIVO, 0); // Establecer el estado a inactivo (0)
 
         // Actualizar el usuario con el ID correspondiente
-        db.update("usuarios", values, "id=?", new String[]{String.valueOf(usuarioIdActivo)});
-    }
-
-    // Método para obtener el ID del usuario activo (este método depende de tu implementación)
-    private int obtenerUsuarioIdActivo() {
-        // Aquí deberías tener una lógica para obtener el ID del usuario que está actualmente activo.
-        // Puede ser a través de un SharedPreferences, una variable global, o similar.
-        // Ejemplo:
-        return 1; // Suponiendo que el usuario activo es el con ID 1, cambia esto según tu lógica
+        db.update(MiBaseDeDatos.TABLE_USUARIOS, values, MiBaseDeDatos.COLUMN_ID + "=?", new String[]{String.valueOf(usuarioIdActivo)});
     }
 }

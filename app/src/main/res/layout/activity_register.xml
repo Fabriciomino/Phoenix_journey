@@ -7,170 +7,168 @@
     android:background="#000000"
     tools:context=".RegisterActivity">
 
-
+    <!-- Título de la pantalla -->
     <TextView
         android:id="@+id/register_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registro"
-        android:textColor="#FFFF"
-        android:textSize="20sp"
-        android:layout_marginTop="80dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="140dp"
         android:fontFamily="serif"
+        android:text="Registro"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-
-    <ImageButton
-        android:id="@+id/back_button"
-        android:layout_width="25dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="70dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:contentDescription="Botón de Atrás"
-        android:scaleType="fitCenter"
-        android:src="@drawable/atras"
+    <!-- Texto de campo obligatorio para Nombre de Usuario -->
+    <TextView
+        android:id="@+id/username_required"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="serif"
+        android:text="* Nombre de usuario"
+        android:textColor="#B0B0B0"
+        android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/register_title" />
 
     <!-- Campo de Nombre de Usuario -->
     <EditText
         android:id="@+id/username_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="40dp"
-        android:backgroundTint="#b89454"
-        android:hint="Nombre de usuario"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/edittext_background"
         android:fontFamily="serif"
-        android:inputType="text"
+        android:hint="Nombre de Usuario"
         android:padding="16dp"
-        android:textColor="#FFFFFf"
+        android:textColor="#FFFFFF"
         android:textColorHint="#B0B0B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/register_title" />
-    <ImageView
-        android:id="@+id/user_icon_email"
-        android:layout_width="29dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="123dp"
-        android:src="@drawable/user"
+        app:layout_constraintTop_toBottomOf="@id/username_required" />
+
+    <!-- Texto de campo obligatorio para Email -->
+    <TextView
+        android:id="@+id/email_required"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="serif"
+        android:text="* Email"
+        android:textColor="#B0B0B0"
+        android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/back_button" />
+        app:layout_constraintTop_toBottomOf="@id/username_input" />
 
     <!-- Campo de Email -->
     <EditText
         android:id="@+id/email_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="40dp"
-        android:backgroundTint="#b89454"
-        android:hint="Email"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/edittext_background"
         android:fontFamily="serif"
+        android:hint="Email"
         android:inputType="textEmailAddress"
         android:padding="16dp"
         android:textColor="#FFFFFF"
         android:textColorHint="#B0B0B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/username_input" />
+        app:layout_constraintTop_toBottomOf="@id/email_required" />
+
+    <!-- Texto de campo obligatorio para Contraseña -->
+    <TextView
+        android:id="@+id/password_required"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="serif"
+        android:text="* Contraseña"
+        android:textColor="#B0B0B0"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email_input" />
 
     <!-- Campo de Contraseña -->
-    <ImageView
-        android:id="@+id/user_icon"
-        android:layout_width="29dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="194dp"
-        android:src="@drawable/user"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/back_button" />
-
     <EditText
         android:id="@+id/password_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/edittext_background"
+        android:fontFamily="serif"
         android:hint="Contraseña"
         android:inputType="textPassword"
-        android:fontFamily="serif"
+        android:padding="16dp"
         android:textColor="#FFFFFF"
-        android:backgroundTint="#b89454"
         android:textColorHint="#B0B0B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/email_input"
-        android:padding="16dp" />
+        app:layout_constraintTop_toBottomOf="@id/password_required" />
+
+    <!-- Texto de campo obligatorio para Confirmar Contraseña -->
+    <TextView
+        android:id="@+id/confirm_password_required"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="serif"
+        android:text="* Confirmar Contraseña"
+        android:textColor="#B0B0B0"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_input" />
 
     <!-- Campo de Confirmar Contraseña -->
-
-    <ImageView
-        android:id="@+id/candado_icon"
-        android:layout_width="20dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="102dp"
-        android:src="@drawable/cand"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/username_input" />
-
     <EditText
         android:id="@+id/confirm_password_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/edittext_background"
+        android:fontFamily="serif"
         android:hint="Confirmar Contraseña"
         android:inputType="textPassword"
-        android:fontFamily="serif"
+        android:padding="16dp"
         android:textColor="#FFFFFF"
-        android:backgroundTint="#b89454"
         android:textColorHint="#B0B0B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password_input"
-        android:padding="16dp" />
+        app:layout_constraintTop_toBottomOf="@id/confirm_password_required" />
 
     <!-- Botón de Registrarse -->
-
-    <ImageView
-        android:id="@+id/candado_icon_confir"
-        android:layout_width="20dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="176dp"
-        android:src="@drawable/cand"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/username_input" />
-
     <Button
         android:id="@+id/register_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/button_momt"
-        android:text="Registrarse"
         android:fontFamily="serif"
-        android:textColor="#ffff"
+        android:padding="10dp"
+        android:text="Registrarse"
+        android:textColor="#FFF"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/confirm_password_input"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:padding="16dp" />
-
+        app:layout_constraintTop_toBottomOf="@id/confirm_password_input" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

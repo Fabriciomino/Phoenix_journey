@@ -15,6 +15,10 @@ public class DietaFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+
+
+
         // Inflar el layout del fragmento
         View view = inflater.inflate(R.layout.fragment_dieta, container, false);
 

@@ -27,14 +27,25 @@ public class AgregarDatosActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Eliminar la ActionBar (nombre de la clase en la parte superior)
+        // Ocultar la barra de acción si está disponible
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-        // Configurar la ventana para un diseño de pantalla completa
+
+        // Configurar la ventana para que ocupe toda la pantalla
         getWindow().setFlags(
-                android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY,
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
         );
         setContentView(R.layout.activity_agregar_datos);
 

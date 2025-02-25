@@ -22,19 +22,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <!-- Campo para introducir el nombre de perfil -->
     <EditText
         android:id="@+id/nombre_perfil_input"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="294dp"
+        android:layout_height="55dp"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="60dp"
         android:backgroundTint="#b89454"
-        android:hint="Introducir nombre de perfil"
         android:fontFamily="serif"
-        android:textStyle="italic"
+        android:hint="Introducir nombre de perfil"
         android:inputType="text"
         android:padding="16dp"
         android:textColor="#FFFFFf"
@@ -43,32 +41,53 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/agregar_amigos_text" />
 
-    <!-- Botón de Buscar Usuario -->
-
+    <!-- RecyclerView para mostrar los usuarios encontrados -->
     <ImageView
         android:id="@+id/user_icon_search"
-        android:layout_width="29dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="125dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
         android:src="@drawable/add2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/agregar_amigos_text" />
 
     <Button
         android:id="@+id/buscar_usuario_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Buscar Usuario"
-        android:fontFamily="serif"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:textSize="15sp"
-        android:background="@drawable/button_siguiente"
-        app:layout_constraintTop_toBottomOf="@id/nombre_perfil_input"
+        android:layout_width="28dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="355dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/lupa"
+        android:alpha="0.8"
+        android:src="@drawable/add2"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/agregar_amigos_text" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_usuarios"
+        android:layout_width="336dp"
+        android:layout_height="519dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:padding="16dp" />
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nombre_perfil_input"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/ver_amigo_button"
+        android:layout_width="113dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/button_siguiente_default"
+        android:fontFamily="serif"
+        android:text="Ver Amigos"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

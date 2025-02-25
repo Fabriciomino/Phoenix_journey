@@ -2,6 +2,7 @@ package com.example.myapplication_phoenix_journey;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import androidx.appcompat.app.AlertDialog;
@@ -21,23 +22,28 @@ public class EjerEspaldaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ejer_espalda);
 
-        ocultarActionBar();
-        configurarPantallaCompleta();
-        inicializarBotonAtras();
-        inicializarBotonesEjercicios();
-    }
-
-    private void ocultarActionBar() {
+        // Ocultar la barra de acción si está disponible
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-    }
 
-    private void configurarPantallaCompleta() {
+        // Configurar la ventana para que ocupe toda la pantalla
         getWindow().setFlags(
-                android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY,
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
         );
+        inicializarBotonAtras();
+        inicializarBotonesEjercicios();
     }
 
     private void inicializarBotonAtras() {

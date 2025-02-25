@@ -35,6 +35,8 @@ public class CalendarioFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+
         // Inflar el layout del fragmento
         View view = inflater.inflate(R.layout.fragment_calendario, container, false);
 

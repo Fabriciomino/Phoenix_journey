@@ -21,19 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- RecyclerView para mostrar las imágenes -->
-    <ImageButton
-        android:id="@+id/back_button"
-        android:layout_width="25dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="70dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:contentDescription="Botón de Atrás"
-        android:scaleType="fitCenter"
-        android:src="@drawable/atras"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_fotos_progreso"
@@ -51,33 +39,33 @@
         android:id="@+id/boton_agregar_foto_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal"
+        android:layout_marginBottom="36dp"
         android:gravity="center_vertical"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <!-- Imagen como botón -->
         <ImageView
             android:id="@+id/boton_agregar_foto"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/camarabuena"
             android:layout_marginEnd="8dp"
             android:clickable="true"
-            android:focusable="true" />
+            android:focusable="true"
+            android:src="@drawable/camarabuena" />
 
         <!-- Texto al lado derecho de la imagen -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Añadir Foto"
             android:fontFamily="serif"
-            android:textStyle="italic"
+            android:gravity="center_vertical"
+            android:text="Añadir Foto"
             android:textColor="#D3D3D3"
             android:textSize="16sp"
-            android:gravity="center_vertical" />
+            android:textStyle="italic" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.myapplication_phoenix_journey; // Paquete de la actividad
+package com.example.myapplication_phoenix_journey;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,11 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-
-import com.example.myapplication_phoenix_journey.basesdedatos.MiBaseDeDatos; // Importa la clase desde el paquete de base de datos
+import com.example.myapplication_phoenix_journey.basesdedatos.MiBaseDeDatos;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -20,21 +17,32 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText passwordInput;
     private EditText confirmPasswordInput;
     private Button registerButton;
-    private ImageButton backButton;
-    private MiBaseDeDatos dbHelper; // Declarar la referencia de la base de datos
+    private MiBaseDeDatos dbHelper; // Referencia a la base de datos
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        // Ocultar la barra de acción (si está presente) y hacer la ventana a pantalla completa
+        // Ocultar la barra de acción si está disponible
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+
+        // Configurar la ventana para que ocupe toda la pantalla
         getWindow().setFlags(
-                android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY,
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
         );
 
         dbHelper = new MiBaseDeDatos(this); // Instancia de la base de datos
@@ -45,8 +53,8 @@ public class RegisterActivity extends AppCompatActivity {
         passwordInput = findViewById(R.id.password_input);
         confirmPasswordInput = findViewById(R.id.confirm_password_input);
         registerButton = findViewById(R.id.register_button);
-        backButton = findViewById(R.id.back_button);
 
+        // Configurar el botón de registro
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +75,7 @@ public class RegisterActivity extends AppCompatActivity {
                 else if (dbHelper.usuarioExiste(username)) {
                     Toast.makeText(RegisterActivity.this, "Este nombre de usuario ya está registrado", Toast.LENGTH_SHORT).show();
                 } else {
-                    // Registrar al usuario en la base de datos
+                    // Registrar al usuario en la base de datos (sin imagen de perfil)
                     long id = dbHelper.insertarUsuario(username, email, password);
                     if (id > 0) {
                         Toast.makeText(RegisterActivity.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
@@ -81,14 +89,5 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        // Navegar hacia la pantalla principal al presionar el botón de retroceso
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
     }
 }
